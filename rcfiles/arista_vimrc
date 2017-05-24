@@ -442,3 +442,21 @@ au BufNewFile,BufRead *.py
      \ set expandtab
 
 let LID_File = "/home/makwana.d/ws/firstMut/src/ID"
+"let LID_File = "/home/makwana.d/ws/OspfCli193576/src/ID"
+
+
+" vivek cscope and python
+if filereadable("c_cscope.out")
+    silent exe "cs add /src/c_cscope.out"
+endif
+
+if filereadable("py_cscope.out")
+   silent
+endif
+
+
+" vim close quikfix window when file is closed
+aug QFClose
+  au!
+  au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+aug END
