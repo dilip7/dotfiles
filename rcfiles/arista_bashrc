@@ -14,3 +14,6 @@ fi
 # EDITOR - emacs to vim Arista
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+
+export CSCOPE_DB="/home/makwana.d/ws/OspfCli193576/src/c_cscope.out"

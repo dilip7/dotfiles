@@ -441,17 +441,17 @@ au BufNewFile,BufRead *.py
      \ set softtabstop=3 |
      \ set expandtab
 
-let LID_File = "/home/makwana.d/ws/firstMut/src/ID"
-"let LID_File = "/home/makwana.d/ws/OspfCli193576/src/ID"
+"let LID_File = "/home/makwana.d/ws/firstMut/src/ID"
+let LID_File = "/home/makwana.d/ws/OspfCli193576/src/ID"
 
 
 " vivek cscope and python
 if filereadable("c_cscope.out")
-    silent exe "cs add /src/c_cscope.out"
+  silent exe "cs add /src/c_cscope.out"
 endif
 
 if filereadable("py_cscope.out")
-   silent
+  silent exe "cs add /src/py_cscope.out"
 endif
 
 
@@ -460,3 +460,6 @@ aug QFClose
   au!
   au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 aug END
+
+" cscope use relative paths to open file from any directory
+set csre
